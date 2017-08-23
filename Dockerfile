@@ -27,7 +27,7 @@ RUN apt-get update -y && apt-get install -yy \
       fluent-plugin-rewrite-tag-filter \
       fluent-plugin-record-reformer \
       fluent-plugin-systemd:0.0.8 \
-      fluent-plugin-tail-multiline \
+      fluent-plugin-grok-parser:1.0.0 \
       ffi \
       fluent-plugin-kubernetes_metadata_filter \
       fluent-plugin-statsd-event:0.1.1 && \
