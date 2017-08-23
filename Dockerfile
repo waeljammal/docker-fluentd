@@ -24,6 +24,7 @@ RUN apt-get update -y && apt-get install -yy \
       fluent-plugin-concat:0.4.0 \
       fluent-plugin-parser:0.6.1 \
       fluent-plugin-secure-forward \
+      fluent-plugin-rewrite-tag-filter \
       fluent-plugin-record-reformer \
       fluent-plugin-systemd:0.0.8 \
       ffi \
