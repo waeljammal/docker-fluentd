@@ -28,6 +28,7 @@ RUN apt-get update -y && apt-get install -yy \
       fluent-plugin-record-reformer \
       fluent-plugin-systemd:0.0.8 \
       fluent-plugin-grok-parser \
+      fluent-plugin-detect-exceptions \
       ffi \
       fluent-plugin-kubernetes_metadata_filter \
       fluent-plugin-statsd-event:0.1.1 && \
