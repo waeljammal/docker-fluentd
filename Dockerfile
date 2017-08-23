@@ -1,6 +1,6 @@
 FROM ruby:2.2.5-slim
 
-MAINTAINER Micros <micros@atlassian.com>
+MAINTAINER Wael <wael@rsnewmedia.com>
 
 COPY .gemrc /root/
 
@@ -36,8 +36,15 @@ RUN apt-get update -y && apt-get install -yy \
 
 RUN mkdir -p /var/log/fluent
 
+# Copy plugins
+COPY plugins /fluentd/plugins/
+COPY ./fluentd.conf /fluentd/etc/
+
+ENV FLUENTD_CONF="fluentd.conf"
+ENV FLUENTD_OPT=""
+
 # port monitor forward debug
 EXPOSE 24220   24224   24230
 
 ENV LD_PRELOAD "/usr/lib/x86_64-linux-gnu/libjemalloc.so.1"
-CMD ["fluentd", "-c", "/etc/fluent/fluentd.conf"]
+CMD exec fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
