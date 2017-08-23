@@ -23,6 +23,11 @@ RUN apt-get update -y && apt-get install -yy \
       fluent-plugin-kinesis-aggregation:0.2.2 \
       fluent-plugin-concat:0.4.0 \
       fluent-plugin-parser:0.6.1 \
+      fluent-plugin-secure-forward \
+      fluent-plugin-record-reformer \
+      fluent-plugin-systemd:0.0.8 \
+      ffi \
+      fluent-plugin-kubernetes_metadata_filter \
       fluent-plugin-statsd-event:0.1.1 && \
     apt-get purge -y build-essential && \
     apt-get autoremove -y && \
